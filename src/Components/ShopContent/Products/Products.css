@@ -1,0 +1,22 @@
+.single-product{
+  border: 1px solid lightgray;
+  padding: 20px 10px;
+  margin: 30px 20px;
+  background-color: rgba(171, 190, 219, 0.3);
+  position: relative;
+}
+.single-product img{
+ height: 250px;
+ width: 300px;
+ 
+}
+.info button{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border: none;
+  left: 0;
+  height: 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
