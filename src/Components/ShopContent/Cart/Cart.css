@@ -1,0 +1,14 @@
+.details{
+  display: flex;
+  align-items: center;
+ 
+}
+#icon{
+  padding-left: 10px;
+}
+.details img{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding-right: 5px;
+}
