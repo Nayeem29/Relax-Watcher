@@ -35,6 +35,13 @@ const Shop = () => {
     console.log(wishList.length);
   }
 
+  const deleteWatch = (productId) => {
+    const rest = wishList.filter(watch => watch._id !== productId);
+    setWishList([...rest]);
+    console.log((wishList.length));
+    (wishList.length <= 3) ? setHasItems(false) : setHasItems(true);
+  }
+
   const chooseRandomly = (products) => {
     let randomWatch = []
     for (const watch of products) {
@@ -66,7 +73,8 @@ const Shop = () => {
         <div className="cart-container">
           <p>Order Summary:</p>
           {
-            wishList.map(item => <Cart key={item.name} selectedProducts={item}></Cart>)
+            wishList.map(item => <Cart key={item.name} selectedProducts={item}
+              deleteWatch={deleteWatch}></Cart>)
 
           }
         </div>
