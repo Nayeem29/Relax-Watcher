@@ -91,7 +91,7 @@ const Shop = () => {
         {
           (hasItems) ? <div className="choose-option">
             <button onClick={() => chooseRandomly(wishList)}>
-              <h5>Choose Randomly</h5>
+              <h5>Choose 1 Randomly</h5>
             </button>
             <button onClick={() => chooseAgain()}>
               <h5>Choose Again</h5>
