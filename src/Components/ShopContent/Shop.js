@@ -25,11 +25,11 @@ const Shop = () => {
     if (!exists) {
       newWisthListProducts = [...wishList, selectedWatches];
       if (newWisthListProducts.length < 4) {
-        setWishList(newWisthListProducts);
         setHasItems(false);
-      } else if (newWisthListProducts.length === 4) {
         setWishList(newWisthListProducts);
+      } else if (newWisthListProducts.length === 4) {
         setHasItems(true);
+        setWishList(newWisthListProducts);
       } else {
         setHasItems(true);
         alert('Please Order max 4 items!');
@@ -55,6 +55,7 @@ const Shop = () => {
     for (const watch of products) {
       randomWatch = [...randomWatch, watch._id];
     }
+    // console.log(randomWatch.length);
     const pickedWatchID = randomWatch[Math.floor(Math.random() * randomWatch.length)];
     console.log(pickedWatchID);
     let pickedWatch = [];
@@ -78,15 +79,15 @@ const Shop = () => {
           ></Products>)
         }
       </div>
-      <div className="cart-container">
-        <div className="cart-container">
-          <p>Order Summary:</p>
-          {
-            wishList.map(item => <Cart key={item.name} selectedProducts={item}
-              deleteWatch={deleteWatch}></Cart>)
 
-          }
-        </div>
+
+      <div className="cart-container">
+        <p>Order Summary:</p>
+        {
+          wishList.map(item => <Cart key={item.name} selectedProducts={item}
+            deleteWatch={deleteWatch}></Cart>)
+
+        }
         {
           (hasItems) ? <div className="choose-option">
             <button onClick={() => chooseRandomly(wishList)}>
@@ -98,9 +99,11 @@ const Shop = () => {
 
           </div> : null
         }
-
       </div>
+
+
     </div>
+
   );
 };
 

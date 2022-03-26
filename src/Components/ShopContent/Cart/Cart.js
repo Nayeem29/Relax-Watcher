@@ -8,7 +8,7 @@ const Cart = ({ selectedProducts, deleteWatch }) => {
   const { picture, name } = selectedProducts;
   // console.log(name);
   return (
-    <div>
+    <div className='cart'>
       <div className="details">
         <img src={picture} alt="" />
         <h4>{name}</h4>

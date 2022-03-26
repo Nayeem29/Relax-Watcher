@@ -12,6 +12,7 @@
 .single-product img{
  height: 250px;
  width: 300px;
+ border-radius: 20px;
 }
 .product-info{
   font-size: 18px;
@@ -31,6 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 #icon{
   margin-left: 5px;

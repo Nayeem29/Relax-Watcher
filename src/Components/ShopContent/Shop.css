@@ -23,6 +23,7 @@
   border: none;
   border-radius: 20px;
   background-color: rgba(171, 190, 219, 0.3);
+  cursor: pointer;
 }
 .choose-option button:hover{
   background-color: cornflowerblue;
