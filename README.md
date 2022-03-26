@@ -1,3 +1,15 @@
+# JSON data
+
+Take imgages from uplash and create JSON Data from json [https://json-generator.com/]
+
+# What my site do
+
+My site can take upto 4 products to the cart and user can randomly select one product if he/she confused which product will suit but for this one must select 4 products.
+
+# Git-Hub and live link:
+git-hub link: [https://github.com/Programming-Hero-Web-Course4/lucky-one-Nayeem29]
+live link: [https://relax-buyer-react.netlify.app/]
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
