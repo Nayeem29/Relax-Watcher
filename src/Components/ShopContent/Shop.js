@@ -15,33 +15,41 @@ const Shop = () => {
       .then(data => setWatches(data))
   }, []);
 
-  // useEffect(() => {
 
-  // }, [])
-
+  //add to cart function
   const manageSelectedProduct = (selectedWatches) => {
     addToDataBase(selectedWatches._id);
     let newWisthListProducts = [];
-    if (wishList.length >= 3) {
-      setHasItems(true);
-    }
+
     const exists = wishList.find(watch => watch._id === selectedWatches._id);
     if (!exists) {
       newWisthListProducts = [...wishList, selectedWatches];
-      setWishList(newWisthListProducts);
+      if (newWisthListProducts.length < 4) {
+        setWishList(newWisthListProducts);
+        setHasItems(false);
+      } else if (newWisthListProducts.length === 4) {
+        setWishList(newWisthListProducts);
+        setHasItems(true);
+      } else {
+        setHasItems(true);
+        alert('Please Order max 4 items!');
+      }
+
     } else {
       alert('Product already Selected');
     }
-    console.log(wishList.length);
+
   }
 
+  //delete btn
   const deleteWatch = (productId) => {
     const rest = wishList.filter(watch => watch._id !== productId);
     setWishList([...rest]);
     console.log((wishList.length));
-    (wishList.length <= 3) ? setHasItems(false) : setHasItems(true);
+    (wishList.length <= 4) ? setHasItems(false) : setHasItems(true);
   }
 
+  //pick random watch
   const chooseRandomly = (products) => {
     let randomWatch = []
     for (const watch of products) {
@@ -56,6 +64,7 @@ const Shop = () => {
     setWishList(pickedWatch);
   }
 
+  //remove all watch
   const chooseAgain = () => {
     setHasItems(false);
     setWishList([]);
